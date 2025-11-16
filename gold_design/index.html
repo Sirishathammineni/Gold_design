@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gold Design & Price Predictor</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>Shine Meter</h1>
+  </header>
+  <section class="input-section">
+    <div class="input-box">
+      <label for="weight">Enter Gold Weight (grams):</label>
+      <input type="number" id="weight" placeholder="e.g., 10" min="1" />
+    </div>
+
+    <div class="input-box">
+      <label for="category">Select Jewelry Type:</label>
+      <select id="category">
+        <option value="all">All</option>
+        <option value="necklace">Necklace</option>
+        <option value="bangle">Bangle</option>
+        <option value="earring">Earring</option>
+      </select>
+    </div>
+
+    <button id="search-btn">Find Designs</button>
+  </section>
+  <section class="rate-section">
+    <p id="gold-rate">Fetching live gold rate...</p>
+  </section>
+  <section id="results" class="results-section">
+  </section>
+  <section class="ads-section">
+    <h2>✨ Sponsored Jewelry Shops ✨</h2>
+    <div class="ads-slider">
+      <div class="slide fade">
+        <a href="https://www.tanishq.co.in/" target="_blank">
+          <img src="ads/tanishq.jpeg" alt="Tanishq">
+        </a>
+        <p><strong>Tanishq</strong> – Explore timeless gold & diamond collections!</p>
+      </div>
+
+      <div class="slide fade">
+        <a href="https://www.malabargoldanddiamonds.com/" target="_blank">
+          <img src="ads/malabar.jpeg" alt="Malabar">
+        </a>
+        <p><strong>Malabar Gold & Diamonds</strong> – Luxury that shines brighter than gold.</p>
+      </div>
+
+      <div class="slide fade">
+        <a href="https://www.kalyanjewellers.net/" target="_blank">
+          <img src="ads/kalyan.jpg" alt="Kalyan">
+        </a>
+        <p><strong>Kalyan Jewellers</strong> – Traditional elegance, modern craftsmanship.</p>
+      </div>
+    </div>
+
+    <div class="dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Gold Design Predictor | Designed by <strong>Sirisha</strong></p>
+  </footer>
+</body>
+</html>

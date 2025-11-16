@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gold Jewelry Dataset Preview</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f8f8f8;
+    }
+    h2 { text-align: center; }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .item {
+      border: 1px solid #ccc;
+      background: #fff;
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+    img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Gold Jewelry Dataset Preview</h2>
+  <div class="gallery" id="gallery"></div>
+
+  <script>
+    fetch("dataset.json")
+      .then(response => response.json())
+      .then(data => {
+        const gallery = document.getElementById("gallery");
+        data.forEach(item => {
+          const div = document.createElement("div");
+          div.className = "item";
+          div.innerHTML = `
+            <img src="${item.image_url}" alt="${item.category}">
+            <p><b>${item.category}</b></p>
+            <p>Weight: ${item.weight}</p>
+          `;
+          gallery.appendChild(div);
+        });
+      })
+      .catch(err => {
+        console.error("Error loading dataset:", err);
+        document.body.innerHTML += "<p style='color:red;'>❌ Could not load dataset.json</p>";
+      });
+  </script>
+</body>
+</html>
